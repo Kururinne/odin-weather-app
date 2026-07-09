@@ -1,4 +1,4 @@
-import getWeatherData from "./js-api-handler.js";
+import getWeatherData from "./js-get-weather-data.js";
 
 async function filterWeatherData(city) {
   const data = await getWeatherData(city);
@@ -19,6 +19,8 @@ async function filterWeatherData(city) {
     feelslike: currentConditions.feelslike,
     uvindex: currentConditions.uvindex,
     precipprob: currentConditions.precipprob,
+    humidity: currentConditions.humidity,
+    windspeed: currentConditions.windspeed,
   };
 
   return {
