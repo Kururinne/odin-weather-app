@@ -1,4 +1,4 @@
 import "./stylesheet.css";
-import filterWeatherData from "./js-filter-weather-data.js";
+import addSearchListener from "./dom-add-search-listener.js";
 
-filterWeatherData("San Francisco").then((result) => console.log(result));
+addSearchListener();

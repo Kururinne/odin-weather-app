@@ -1,6 +1,6 @@
 body,
 html {
-  min-height: 100%;
+  height: 100%;
   font-family:
     system-ui,
     -apple-system,
@@ -13,17 +13,92 @@ html {
     "Open Sans",
     "Helvetica Neue",
     sans-serif;
-  font-size: 16px;
+  font-size: 20px;
+}
+
+input,
+button {
+  font-size: inherit;
+  background-color: inherit;
+  color: inherit;
+}
+
+body {
+  color: white;
+  background-color: #1f1f1f;
+}
+
+#content {
+  margin-top: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+#search-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  width: fit-content;
+}
+
+#search-form > label {
+  font-size: 1.5rem;
+}
+
+#search-form > button {
+  background-color: hsl(0, 0%, 20%);
+  padding: 4px 8px;
+  border: 1px solid white;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+#search-form > button:hover {
+  cursor: pointer;
+}
+
+#search-input {
+  background-color: hsl(0, 0%, 20%);
+  padding: 4px;
+  border: 1px solid white;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+#search-input:focus {
+  background-color: hsl(0, 0%, 15%);
+}
+
+.error-display {
+  color: red;
 }
 
 .todays-weather-card {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 }
 
-.todays-weather-card > .location {
+.todays-weather-card > .other-units {
+  display: none;
+}
+
+.loc-time {
+  display: flex;
+  gap: 1rem;
+}
+
+.loc-time > * {
   font-size: 2.5rem;
   font-weight: 700;
+}
+
+.description {
+  font-size: 1.5rem;
 }
 
 .main-info {
@@ -47,6 +122,7 @@ html {
 .temp-info > .temp-number {
   font-size: 5rem;
   font-weight: 700;
+  width: 6.5rem;
 }
 
 .temp-info > .units-switch {
@@ -56,6 +132,14 @@ html {
   font-size: 1.5rem;
   font-weight: 500;
   gap: 0.5rem;
+}
+
+.units-switch > * {
+  cursor: pointer;
+}
+
+.unit-active {
+  text-decoration: underline;
 }
 
 .main-info > .misc-info {

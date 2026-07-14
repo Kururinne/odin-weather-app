@@ -7,17 +7,12 @@ async function filterWeatherData(city) {
     resolvedAddress: address,
     description,
     currentConditions,
-    tzOffset,
+    timezone,
   } = data;
 
   const conditions = {
     description: currentConditions.conditions,
-    timeEpoch: currentConditions.datetimeEpoch,
-    sunriseEpoch: currentConditions.sunriseEpoch,
-    sunsetEpoch: currentConditions.sunsetEpoch,
     temp: currentConditions.temp,
-    feelslike: currentConditions.feelslike,
-    uvindex: currentConditions.uvindex,
     precipprob: currentConditions.precipprob,
     humidity: currentConditions.humidity,
     windspeed: currentConditions.windspeed,
@@ -26,7 +21,7 @@ async function filterWeatherData(city) {
   return {
     address,
     description,
-    tzOffset,
+    timezone,
     conditions,
   };
 }
