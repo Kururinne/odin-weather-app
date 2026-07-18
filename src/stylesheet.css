@@ -149,3 +149,8 @@ body {
   font-size: 1rem;
   font-weight: 500;
 }
+
+.loading {
+  font-size: 4rem;
+  font-weight: 700;
+}

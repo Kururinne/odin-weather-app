@@ -4,6 +4,11 @@ import { format } from "date-fns";
 
 async function updateCurrentWeatherInfo(city) {
   try {
+    const weatherInfo = document.getElementById("weather-info");
+
+    const loadingCard = makeLoadingCard();
+    weatherInfo.replaceChildren(loadingCard);
+
     const data = await filterWeatherData(city);
     const weatherCard = makeWeatherCard(data);
 
@@ -16,7 +21,6 @@ async function updateCurrentWeatherInfo(city) {
       }
     });
 
-    const weatherInfo = document.getElementById("weather-info");
     weatherInfo.replaceChildren(weatherCard);
   } catch (error) {
     const errorDisplay = document.querySelector(".error-display");
@@ -112,6 +116,15 @@ function changeUnits(weatherCard) {
   } else {
     weatherCard.dataset.unit = "us";
   }
+}
+
+function makeLoadingCard() {
+  const loadingCard = document
+    .getElementById("loading-screen")
+    .content.querySelector(".loading")
+    .cloneNode(true);
+
+  return loadingCard;
 }
 
 export default updateCurrentWeatherInfo;
