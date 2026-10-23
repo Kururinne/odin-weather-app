@@ -57,7 +57,7 @@ function makeWeatherCard(data) {
 
   const precipString = `Precipitation: ${data.conditions.precipprob}%`;
   const humidityString = `Humidity: ${data.conditions.humidity}%`;
-  const windString = `Wind: ${data.conditions.windspeed} km/h`;
+  const windString = `Wind: ${data.conditions.windspeed} mi/h`;
 
   location.textContent = locationString;
   time.textContent = timeString;
